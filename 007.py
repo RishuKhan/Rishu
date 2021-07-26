@@ -60,7 +60,7 @@ def tik():
 back = 0
 threads = []
 berhasil = []
-Rishu CP = []
+Checkpoint = []
 Oks = []
 id = []
 listgrup = []
